@@ -1,6 +1,6 @@
 # 3 scenario olusturup apple, samsung ve headphone aratin ve urun bulunabildigini test edin
   Feature: US1003 kullanici parametre olarak istedigi kelimeyi aratir
-
+    @smoke
     Scenario: TC07 kullanici apple arattiginda urun bulabilmeli
 
       Given kullanici toUrl adresine gider

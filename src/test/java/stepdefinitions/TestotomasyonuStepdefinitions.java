@@ -101,4 +101,24 @@ public class TestotomasyonuStepdefinitions {
 
         ReusableMethods.bekle(beklenecekSaniye);
     }
+
+    @Then("sisteme giris yapilamadigini test eder")
+    public void sistemeGirisYapilamadiginiTestEder() {
+        // sisteme giris yapilamadigini email kutusunun hala gorunur olmasi ile test edelim
+        Assertions.assertTrue(testOtomasyonuPage.loginEmailKutusu.isDisplayed());
+
+    }
+
+    @Then("bulunan urunlerden ilkini tiklar")
+    public void bulunan_urunlerden_ilkini_tiklar() {
+
+    }
+    @Then("acilan sayfadaki urun isminde case sensitive olmadan {string} bulundugunu test eder")
+    public void acilan_sayfadaki_urun_isminde_case_sensitive_olmadan_bulundugunu_test_eder(String string) {
+
+    }
+    @Then("acilan ilk urun sayfasindaki urun ismini yazdirir")
+    public void acilan_ilk_urun_sayfasindaki_urun_ismini_yazdirir() {
+
+    }
 }
