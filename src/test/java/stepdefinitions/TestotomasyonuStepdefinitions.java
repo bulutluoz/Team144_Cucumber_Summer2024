@@ -111,14 +111,21 @@ public class TestotomasyonuStepdefinitions {
 
     @Then("bulunan urunlerden ilkini tiklar")
     public void bulunan_urunlerden_ilkini_tiklar() {
-
+        testOtomasyonuPage.bulunanUrunElementleriList
+                            .get(0)
+                            .click();
     }
     @Then("acilan sayfadaki urun isminde case sensitive olmadan {string} bulundugunu test eder")
-    public void acilan_sayfadaki_urun_isminde_case_sensitive_olmadan_bulundugunu_test_eder(String string) {
+    public void acilan_sayfadaki_urun_isminde_case_sensitive_olmadan_bulundugunu_test_eder(String expectedIsimIcerik) {
 
+        String actualIsim = testOtomasyonuPage.ilkUrunSayfasiIsimElementi
+                                                .getText();
+
+        Assertions.assertTrue(actualIsim.toLowerCase().contains(expectedIsimIcerik));
     }
     @Then("acilan ilk urun sayfasindaki urun ismini yazdirir")
     public void acilan_ilk_urun_sayfasindaki_urun_ismini_yazdirir() {
 
+        System.out.println(testOtomasyonuPage.ilkUrunSayfasiIsimElementi.getText());
     }
 }

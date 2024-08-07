@@ -13,6 +13,7 @@ import org.junit.platform.suite.api.Suite;
 @ConfigurationParameter(key = Constants.GLUE_PROPERTY_NAME,value = "stepdefinitions")
 //@ConfigurationParameter(key = Constants.FILTER_TAGS_PROPERTY_NAME,value = "@wip")
 @ConfigurationParameter(key = Constants.EXECUTION_DRY_RUN_PROPERTY_NAME,value = "false")
+@ConfigurationParameter(key = Constants.PLUGIN_PROPERTY_NAME,value = "pretty, html:target/cucumber-report/HtmlReport.html")
 
 public class Runner {
 
@@ -55,5 +56,13 @@ public class Runner {
 
                             hata yapmamak icin eksik adimlari belirlemek adina value true yapilip
                             eksik adimlar belirlendikten sonra hemen value false'a dondurulmelidir
+
+ @ConfigurationParameter(key = Constants.PLUGIN_PROPERTY_NAME,value = "pretty, html:target/cucumber-report/HtmlReport.html")
+                            otomatik olarak HTML rapor olusturulmasini saglar
+                            dosya yolu html:target/cucumber-report/HtmlReport.html
+                            secildigi icin Runner her calistiginda HtmlReport isminde dosya olusturup
+                            onceki raporun uzerine kaydeder
+                            eger raporun kaybolmasi ve uzerine kayit yapilmasini istemezseniz
+                            yukardaki paraetrede dosya yolunu degistirebilirsiniz
 
  */
