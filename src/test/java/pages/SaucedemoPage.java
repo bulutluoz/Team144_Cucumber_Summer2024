@@ -24,4 +24,13 @@ public class SaucedemoPage {
 
     @FindBy(xpath = "//*[@class='inventory_item_name ']")
     public List<WebElement> tumUrunElementleriList;
+
+    @FindBy(id = "add-to-cart")
+    public WebElement addToCartButonu;
+
+    @FindBy(className = "shopping_cart_link")
+    public WebElement alisverisSepetiLinki;
+
+    @FindBy(className = "inventory_item_name")
+    public WebElement sepettekiUrunIsimElementi;
 }

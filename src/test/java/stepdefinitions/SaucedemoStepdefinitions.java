@@ -3,6 +3,7 @@ package stepdefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.jupiter.api.Assertions;
 import pages.SaucedemoPage;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -45,15 +46,23 @@ public class SaucedemoStepdefinitions {
     }
     @When("saucedemo add to Cart butonuna basar")
     public void saucedemo_add_to_cart_butonuna_basar() {
-
+        saucedemoPage.addToCartButonu
+                        .click();
     }
     @Then("saucedemo alisveris sepetine tiklar")
     public void saucedemo_alisveris_sepetine_tiklar() {
 
+        saucedemoPage.alisverisSepetiLinki
+                .click();
     }
     @Then("sectigi urunun basarili olarak sepete eklendigini test eder")
     public void sectigi_urunun_basarili_olarak_sepete_eklendigini_test_eder() {
+        // bunu test etmek icin daha once kaydettigimiz urun ismi ile
+        // sepetteki urunun isminin ayni oldugunu test edelim
 
+        String sepettekiUrunIsmi = saucedemoPage.sepettekiUrunIsimElementi.getText();
+
+        Assertions.assertEquals(secilenUrununIsmi,sepettekiUrunIsmi);
     }
 
 
