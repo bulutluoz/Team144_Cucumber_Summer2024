@@ -6,6 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import pages.TestOtomasyonuPage;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -27,7 +28,11 @@ public class TestotomasyonuStepdefinitions {
     @Then("arama sonucunda urun bulunabildigini test eder")
     public void arama_sonucunda_urun_bulunabildigini_test_eder() {
 
-        Assertions.assertTrue(testOtomasyonuPage.bulunanUrunElementleriList.size() > 0);
+        String unExpectedSonuc = "0 Products Found";
+        String actualSonuc = testOtomasyonuPage.aramaSonucuElementi
+                                                .getText();
+
+        Assertions.assertNotEquals(unExpectedSonuc,actualSonuc);
 
     }
     @Then("sayfayi kapatir")
@@ -104,8 +109,22 @@ public class TestotomasyonuStepdefinitions {
 
     @Then("sisteme giris yapilamadigini test eder")
     public void sistemeGirisYapilamadiginiTestEder() {
-        // sisteme giris yapilamadigini email kutusunun hala gorunur olmasi ile test edelim
-        Assertions.assertTrue(testOtomasyonuPage.loginEmailKutusu.isDisplayed());
+
+        try {
+            // sisteme giris yapilamadigini email kutusunun hala gorunur olmasi ile test edelim
+            Assertions.assertTrue(testOtomasyonuPage.loginEmailKutusu.isDisplayed());
+
+        } catch (NoSuchElementException e) {
+            // EGER NoSuchElementException olustu ise
+            // giris yapilamamasi gerektigi halde GIRIS YAPILDI demektir
+            // BU durumda TEST FAILED olmali ancak calismaya devam etmesini de saglamaliyiz
+
+            // once giris yaptiysa logout olalim
+            testOtomasyonuPage.logoutButonu.click();
+            // sonra testin failed olmasini saglayalim
+            Assertions.assertTrue(testOtomasyonuPage.loginEmailKutusu.isDisplayed());
+        }
+
 
     }
 
@@ -127,5 +146,17 @@ public class TestotomasyonuStepdefinitions {
     public void acilan_ilk_urun_sayfasindaki_urun_ismini_yazdirir() {
 
         System.out.println(testOtomasyonuPage.ilkUrunSayfasiIsimElementi.getText());
+    }
+
+    @When("email olarak direkt verilen {string} girer")
+    public void emailOlarakDirektVerilenGirer(String direktVerilenEmail) {
+        testOtomasyonuPage.loginEmailKutusu
+                            .sendKeys(direktVerilenEmail);
+    }
+
+    @And("password olarak direkt verilen {string} girer")
+    public void passwordOlarakDirektVerilenGirer(String direktVerilenPassword) {
+        testOtomasyonuPage.loginPasswordKutusu
+                            .sendKeys(direktVerilenPassword);
     }
 }
