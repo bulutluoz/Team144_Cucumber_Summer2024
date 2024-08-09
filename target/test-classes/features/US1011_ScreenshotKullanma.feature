@@ -1,6 +1,6 @@
 
   Feature: US1011 istenen durumlarda screenshot alinabilmeli
-
+    @E2E
     Scenario: TC19 Tum sayfa veya webelement screenshot
       # eger test failed olursa, failed olan asamada screenshot alip, rapora ekleyin
 

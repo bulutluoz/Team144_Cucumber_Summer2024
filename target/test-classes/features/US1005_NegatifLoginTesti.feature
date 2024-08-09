@@ -1,10 +1,9 @@
 
   @smoke
-
   Feature: US1005 kullanici gecersiz datalarla sisteme giris yapamaz
 
     # 3 farkli senaryo ile gecersiz bilgilerle giris yapilamadigini test edin
-
+    @E2E
     Scenario: TC11 Gecersiz email ile sisteme giris yapilamaz
 
       Given kullanici toUrl adresine gider

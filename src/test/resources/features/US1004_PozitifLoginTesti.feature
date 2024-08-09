@@ -1,6 +1,6 @@
 
   Feature: US1004 kullanici gecerli datalarla sisteme girer
-    @smoke
+    @smoke @E2E
     Scenario: TC10 gecerli degerlerle sisteme giris yapilabilmeli
       Given kullanici toUrl adresine gider
       Then account butonuna basar

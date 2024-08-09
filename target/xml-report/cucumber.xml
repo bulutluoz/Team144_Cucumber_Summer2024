@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="8.313" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="US1011 istenen durumlarda screenshot alinabilmeli" name="TC19 Tum sayfa veya webelement screenshot" time="8.233">
+<testsuite name="Cucumber" time="31.883" tests="4" skipped="0" failures="0" errors="0">
+<testcase classname="US1002 Kullanici ortak baslangic adimlarini Backgroun olarak yazabilir" name="TC05 Kullanici testotomasyonu.com'da dress aratip urun bulabilmeli" time="7.759">
+<system-out><![CDATA[
+Given kullanici toUrl adresine gider........................................passed
+Then arama kutusuna dress yazip aratir......................................passed
+And arama sonucunda urun bulunabildigini test eder..........................passed
+And sayfayi kapatir.........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="US1004 kullanici gecerli datalarla sisteme girer" name="TC10 gecerli degerlerle sisteme giris yapilabilmeli" time="10.226">
+<system-out><![CDATA[
+Given kullanici toUrl adresine gider........................................passed
+Then account butonuna basar.................................................passed
+And email olarak "toGecerliEmail" girer.....................................passed
+And password olarak "toGecerliPassword" girer...............................passed
+Then signIn butonuna basar..................................................passed
+And basarili giris yapilabildigini test eder................................passed
+And 3 saniye bekler.........................................................passed
+And sayfayi kapatir.........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="US1005 kullanici gecersiz datalarla sisteme giris yapamaz" name="TC11 Gecersiz email ile sisteme giris yapilamaz" time="6.912">
+<system-out><![CDATA[
+Given kullanici toUrl adresine gider........................................passed
+Then account butonuna basar.................................................passed
+And email olarak "toGecersizEmail" girer....................................passed
+And password olarak "toGecerliPassword" girer...............................passed
+When signIn butonuna basar..................................................passed
+Then sisteme giris yapilamadigini test eder.................................passed
+And sayfayi kapatir.........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="US1011 istenen durumlarda screenshot alinabilmeli" name="TC19 Tum sayfa veya webelement screenshot" time="6.865">
 <system-out><![CDATA[
 Given kullanici "toUrl" anasayfaya gider....................................passed
 When belirlenmis aranacak kelimeyi aratir...................................passed

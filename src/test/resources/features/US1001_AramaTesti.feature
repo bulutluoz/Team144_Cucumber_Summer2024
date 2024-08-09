@@ -8,7 +8,7 @@ Feature: US1001 Testotomasyonu.com arama testi
     And arama sonucunda urun bulunabildigini test eder
     And sayfayi kapatir
 
-
+  @smoke
   Scenario: TC02 Kullanici testotomasyonu.com'da dress aratip urun bulabilmeli
     Given kullanici toUrl adresine gider
     Then arama kutusuna dress yazip aratir

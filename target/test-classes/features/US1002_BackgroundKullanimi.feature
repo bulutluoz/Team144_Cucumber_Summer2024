@@ -7,7 +7,7 @@ Feature: US1002 Kullanici ortak baslangic adimlarini Backgroun olarak yazabilir
     Then arama kutusuna phone yazip aratir
     And arama sonucunda urun bulunabildigini test eder
     And sayfayi kapatir
-
+  @E2E
   Scenario: TC05 Kullanici testotomasyonu.com'da dress aratip urun bulabilmeli
     Then arama kutusuna dress yazip aratir
     And arama sonucunda urun bulunabildigini test eder

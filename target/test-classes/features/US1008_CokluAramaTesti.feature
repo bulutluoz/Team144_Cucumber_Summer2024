@@ -1,7 +1,7 @@
 
   Feature: US1008 Kullanici coklu eleman aratir
-  
- Scenario Outline: TC16 kullanici coklu arama yapabilmeli
+  @smoke
+  Scenario Outline: TC16 kullanici coklu arama yapabilmeli
 
     Given kullanici "toUrl" anasayfaya gider
     Then arama kutusuna "<aranacakKelimeler>" yazip aratir
