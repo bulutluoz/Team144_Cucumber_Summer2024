@@ -1,6 +1,6 @@
 Feature:
 
-  Scenario Outline:
+  Scenario Outline:TC18
 
     Given kullanici "toUrl" anasayfaya gider
     Then urun excelindeki "<istenenSatir>" daki urunun min. miktarini ve urun ismini kaydeder
