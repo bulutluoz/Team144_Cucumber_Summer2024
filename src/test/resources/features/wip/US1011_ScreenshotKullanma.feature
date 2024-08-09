@@ -6,7 +6,7 @@
 
       Given kullanici "toUrl" anasayfaya gider
       When belirlenmis aranacak kelimeyi aratir
-      Then arama sonucunda urun bulunamadigini test eder
+      Then arama sonucunda urun bulunabildigini test eder
       And 1 saniye bekler
       And tum sayfanin screenshot'ini alir ve "aramaTesti" ismiyle kaydeder
       Then bulunan urunlerden ilkini tiklar

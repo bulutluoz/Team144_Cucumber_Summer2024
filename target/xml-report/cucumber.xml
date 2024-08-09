@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="8.313" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="US1011 istenen durumlarda screenshot alinabilmeli" name="TC19 Tum sayfa veya webelement screenshot" time="8.233">
+<system-out><![CDATA[
+Given kullanici "toUrl" anasayfaya gider....................................passed
+When belirlenmis aranacak kelimeyi aratir...................................passed
+Then arama sonucunda urun bulunabildigini test eder.........................passed
+And 1 saniye bekler.........................................................passed
+And tum sayfanin screenshot'ini alir ve "aramaTesti" ismiyle kaydeder.......passed
+Then bulunan urunlerden ilkini tiklar.......................................passed
+And acilan sayfadaki urun isminde case sensitive olmadan belirlenmis aranacak bulundugunu test eder.passed
+And 1 saniye bekler.........................................................passed
+And acilan ilk urun sayfasindaki urun isminin screenshoot'ini alir..........passed
+]]></system-out>
+</testcase>
+</testsuite>
